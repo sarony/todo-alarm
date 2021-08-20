@@ -1,0 +1,11 @@
+<% @incomplete_todos.each do |todo| %>
+  <%= todo.body %>
+  <%= todo.reminders.first.scheduled_for_date %>
+  <%= todo.reminders.first.scheduled_for_time %>
+<%  end %>
+
+<% @complete_todos.each do |todo| %>
+  <%= todo.body %>
+  <%= todo.reminders.first.scheduled_for_date %>
+  <%= todo.reminders.first.scheduled_for_time %>
+<%  end %>

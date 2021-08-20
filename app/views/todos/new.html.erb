@@ -1,0 +1,10 @@
+<h1>ToDos</h1>
+<%= simple_form_for @todo do |f| %>
+  <%= f.input :body %>
+  <%= f.association :reminder do |f| %>
+    <%= f.input :scheduled_for_date %>
+    <%= f.input :scheduled_for_time %>
+  <% end %>
+
+  <%= f.button :submit, "Add" %>
+<% end %>
