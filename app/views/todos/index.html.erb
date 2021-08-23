@@ -1,12 +1,18 @@
-<% @incomplete_todos.each do |todo| %>
-  <%= todo.body %>
-  <%#= todo.reminders.first.scheduled_for_date %>
-  <%#= todo.reminders.first.scheduled_for_time %>
-<%  end %>
+<div class="mx-auto max-w-2xl p-8">
+  <h1 class="font-inter font-bold text-xl mb-4">Todos</h1>
+  <% @incomplete_todos.each do |todo| %>
+    <div class="border-gray-200 border-2 rounded-lg mb-4 p-2 pl-4 pr-4">
+      <p><%= todo.body %></p>
+      <%#= todo.reminders.first.scheduled_for_date %>
+      <%#= todo.reminders.first.scheduled_for_time %>
+    </div>
+  <%  end %>
 
-<% @complete_todos.each do |todo| %>
-  <%= todo.body %>
-  <%#= todo.reminders.first.scheduled_for_date %>
-  <%#= todo.reminders.first.scheduled_for_time %>
-<%  end %>
-<h1 class="text-gray-300 font-mono">Test test butt</h1>
+  <% @complete_todos.each do |todo| %>
+    <div class="border-gray-50">
+      <p><%= todo.body %></p>
+      <%#= todo.reminders.first.scheduled_for_date %>
+      <%#= todo.reminders.first.scheduled_for_time %>
+    </div>
+  <%  end %>
+</div>

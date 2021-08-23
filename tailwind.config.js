@@ -5,7 +5,13 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+      fontFamily: {
+        poppins: ["'Poppins'", 'ui-san-serif'],
+        inter: ["'Inter'", 'ui-san-serif']
+        sans: ["'Inter'", 'ui-san-serif']
+      },
+    extend: {
+    }
   },
   variants: {
     extend: {},
