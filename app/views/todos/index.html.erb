@@ -1,21 +1,34 @@
 <div class="mx-auto max-w-2xl p-8">
-  <h1 class="font-inter font-bold text-xl mb-4">Todos</h1>
-  <% @incomplete_todos.each do |todo| %>
-    <div class="border-gray-200 border-2 rounded-lg mb-4 p-2 pl-4 pr-4">
-      <label>
-        <span><%= todo.body %></span>
-        <input type="checkbox" name="todo" value="<%= todo.id %>" class="float-right text-green-500" checked>
-      </label>
-      <%#= todo.reminders.first.scheduled_for_date %>
-      <%#= todo.reminders.first.scheduled_for_time %>
-    </div>
-  <%  end %>
+  <div class="incomplete-todos mb-14">
+    <h1 class="font-inter font-bold text-3xl mb-4">Todos</h1>
+    <% @incomplete_todos.each do |todo| %>
+      <div class="border-gray-200 border-2 rounded-lg mb-4 p-2 pl-4 pr-4">
+        <div class="todo">
+          <label class="inline text-lg"><%= todo.body %></label>
+          <input type="checkbox" name="todo" value="<%= todo.id %>" class="float-right text-green-500 js-check-off" checked>
+        </div>
+        <%#= todo.reminders.first.scheduled_for_date %>
+        <%#= todo.reminders.first.scheduled_for_time %>
+      </div>
+    <%  end %>
 
-  <% @complete_todos.each do |todo| %>
-    <div class="border-gray-50">
-      <p><%= todo.body %></p>
-      <%#= todo.reminders.first.scheduled_for_date %>
-      <%#= todo.reminders.first.scheduled_for_time %>
+    <% @complete_todos.each do |todo| %>
+      <div class="border-gray-50">
+        <p><%= todo.body %></p>
+        <%#= todo.reminders.first.scheduled_for_date %>
+        <%#= todo.reminders.first.scheduled_for_time %>
+      </div>
+    <%  end %>
+  </div>
+
+  <div class="completed-todos">
+    <h2 class="font-bold uppercase">Complete</h2>
+    <div class="completed-todos-list">
     </div>
-  <%  end %>
+  </div>
 </div>
+
+<script>
+console.log("file loaded 2");
+$(".js-check-off").change(function(){if(this.checked){alert("hi")}});
+</script>
